@@ -1,0 +1,54 @@
+
+
+.tools {
+    // border: 2px solid red;
+    min-height: 100vh;
+    @include pad;
+    @include text-font;
+    background: transparent;
+    padding-right: 180px;
+    padding-top: 20vh;
+    position: relative;
+    overflow: hidden;
+    color: white;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 150%;
+        background: linear-gradient(65deg, $purple 60%, $orange 100%);
+        position: absolute;
+        top: 10.05%;
+        left: 0;
+        transform: skewY(-8deg);
+        z-index: -1;
+    }
+
+    .header__content {
+        margin-top: 10px;
+        @include header;
+        position: relative;
+        top: 0;
+        left: 80%;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 50px;
+        margin-top: 50px;
+        margin-bottom: 80px;
+
+        .tool {
+            border: 2px soild rgb(52, 179, 52);
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

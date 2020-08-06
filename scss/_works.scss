@@ -1,0 +1,94 @@
+
+
+.works {
+    // border: 2px solid green;
+    margin-bottom: 60px;
+    min-height: 100vh;
+    @include pad;
+    color: $purple;
+
+    .header__content {
+        margin-top: 60px;
+        @include header;
+
+        .header__underline {
+            border: 2px solid $purple;
+        }
+    }
+
+    &__list {
+        margin-top: 50px;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__item {
+        border: 7px solid $purple;
+        height: 200px;
+        column-gap: 10px;
+        text-align: center;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+
+        &::after {
+            content: "";
+            background: lighten($purple, 50%);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+            @include transition-ease;
+
+        }
+
+        &:hover {
+            &::after {
+                opacity: 0.9;
+                top: 0;
+            }
+            .works__btn {
+                color: $purple;
+                opacity: 1;
+
+                &:hover {
+                    color: darken($purple, 30);
+                }
+            }
+
+        }
+    }
+
+    &__btns {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    &__btn {
+        opacity: 0;
+        @include transition-ease;
+
+        
+
+        i {
+            font-size: 130%;
+            font-weight: lighter;
+        }
+    }
+
+}

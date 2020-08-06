@@ -1,0 +1,115 @@
+@import 'config';
+@import 'facade';
+@import 'about';
+@import 'works';
+@import 'testimonies';
+@import 'contact';
+@import 'tools';
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background: lighten($purple, 55%);
+    padding-top: 20px;
+
+}
+
+
+li {
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    .main__logo {
+        // border: 2px solid green;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        margin-left: 50px;
+
+        h1 {
+            font-size: 250%;
+            color: lighten($purple, 10%);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        img {
+            width: 110px;
+            height: 95px;
+        }
+    }
+    nav ul {
+        // border: 2px solid red;
+        padding: 0;
+        display: grid;
+        margin: 0 auto;
+        gap: 20px;
+        grid-template-columns: repeat(6, auto);
+        padding-right: 40px;
+        align-items: center;
+        justify-content: center;
+
+        li {
+            // border: 2px solid rgb(102, 139, 102);
+            
+
+            a {
+                color: lighten($purple, 10%);
+                padding: 5px 10px;
+                margin: 0 5px;
+                font-size: 20px;
+                border-radius: 3px;
+                @include transition-ease;
+
+                &:hover {
+                    color: darken($purple, 30);
+                    // box-shadow: 0.1px 0.1px 7px 0.1px lighten($purple, 5%);
+                }
+            }
+
+            
+
+            &:nth-last-of-type(1) {
+                padding: 0;
+                border: none;
+            }
+
+            a.highlight {
+                padding: 5px 15px;
+                // border-radius: 5px;
+                font-size: 26px;
+                @include highlight;
+                @include transition-ease;
+
+                &:hover {
+                    box-shadow: 0.1px 0.1px 7px 0.1px lighten($purple, 5%);
+                    color: lighten($purple, 10%);
+                    background-color: lighten($purple, 55%);
+                    @include transition-ease;
+                }
+            }
+            
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
